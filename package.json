@@ -1,0 +1,21 @@
+{
+  "name": "nzela-talents",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.0",
+    "@astrojs/vercel": "^9.0.4",
+    "astro": "^5.17.0",
+    "resend": "^6.9.1"
+  },
+  "devDependencies": {
+    "aos": "^2.3.4",
+    "sass": "^1.97.3"
+  }
+}

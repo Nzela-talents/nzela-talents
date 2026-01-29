@@ -1,0 +1,12 @@
+// ===========================================
+// MAIN - Point d'entrée SCSS
+// ===========================================
+
+// Configuration
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// Base
+@use 'base';
+
+// AOS (Animate On Scroll) - les styles sont importés via JS

@@ -1,0 +1,298 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+// ===========================================
+// HERO
+// ===========================================
+
+.hero {
+  @include page-hero;
+}
+
+.heroContainer {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 0 $container-padding;
+}
+
+.heroTitle {
+  color: $color-white;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.heroSubtitle {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  opacity: 0.9;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
+}
+
+// ===========================================
+// SECTION
+// ===========================================
+
+.section {
+  padding: $spacing-xl 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $container-max-width;
+  padding: 0 $container-padding;
+}
+
+// ===========================================
+// CONTACT GRID
+// ===========================================
+
+.contactGrid {
+  display: grid;
+  gap: $spacing-xl;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// ===========================================
+// CONTACT INFO
+// ===========================================
+
+.contactInfo {
+  padding-right: 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding-right: $spacing-xl;
+  }
+}
+
+.infoTitle {
+  color: $color-primary;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.infoText {
+  color: $color-text-light;
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-xl;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-base;
+  }
+}
+
+.infoItems {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+  margin-bottom: $spacing-xl;
+}
+
+.infoItem {
+  align-items: flex-start;
+  display: flex;
+  gap: $spacing-md;
+}
+
+.infoIcon {
+  align-items: center;
+  background-color: rgba($color-secondary, 0.08);
+  border-radius: $border-radius-full;
+  color: $color-secondary;
+  display: flex;
+  flex-shrink: 0;
+  height: 40px;
+  justify-content: center;
+  width: 40px;
+}
+
+.infoLabel {
+  color: $color-text-muted;
+  display: block;
+  font-size: $font-size-sm;
+  margin-bottom: 2px;
+}
+
+.infoValue {
+  color: $color-text;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: color $transition-fast;
+
+  &:hover {
+    color: $color-secondary;
+  }
+}
+
+.socialLinks {
+  border-top: 1px solid rgba($color-text, 0.1);
+  padding-top: $spacing-lg;
+}
+
+.socialLabel {
+  color: $color-text-muted;
+  display: block;
+  font-size: $font-size-sm;
+  margin-bottom: $spacing-sm;
+}
+
+.socialIcons {
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.socialIcon {
+  align-items: center;
+  background-color: rgba($color-secondary, 0.08);
+  border-radius: $border-radius-full;
+  color: $color-secondary;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  transition: background-color $transition-fast, color $transition-fast;
+  width: 40px;
+
+  &:hover {
+    background-color: $color-secondary;
+    color: $color-white;
+  }
+}
+
+// ===========================================
+// FORM
+// ===========================================
+
+.contactForm {
+  background-color: $color-white;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-xl;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-md;
+}
+
+.formRow {
+  display: grid;
+  gap: $spacing-md;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-sm) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  color: $color-text;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  margin-bottom: $spacing-xs;
+}
+
+.input,
+.select,
+.textarea {
+  background-color: $color-background;
+  border: 1px solid transparent;
+  border-radius: $border-radius-sm;
+  color: $color-text;
+  font-size: $font-size-sm;
+  padding: $spacing-sm $spacing-md;
+  transition: border-color $transition-fast, box-shadow $transition-fast;
+
+  &:focus {
+    border-color: $color-secondary;
+    box-shadow: 0 0 0 3px rgba($color-secondary, 0.1);
+    outline: none;
+  }
+
+  &::placeholder {
+    color: $color-text-muted;
+  }
+}
+
+.textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.submitButton {
+  align-self: flex-start;
+  background-color: $color-secondary;
+  border: none;
+  border-radius: $border-radius-sm;
+  color: $color-white;
+  cursor: pointer;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  padding: $spacing-sm $spacing-xl;
+  transition: background-color $transition-fast, box-shadow $transition-normal;
+
+  &:hover {
+    background-color: $color-secondary-dark;
+    box-shadow: 0 4px 12px rgba($color-secondary, 0.3);
+  }
+
+  &:disabled {
+    background-color: $color-text-muted;
+    cursor: not-allowed;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-base;
+  }
+}
+
+.formStatus {
+  font-size: $font-size-sm;
+  margin-top: $spacing-sm;
+  padding: $spacing-sm;
+  border-radius: $border-radius-sm;
+
+  &:empty {
+    display: none;
+  }
+
+  &:global(.success) {
+    background-color: rgba(#22c55e, 0.1);
+    color: #16a34a;
+  }
+
+  &:global(.error) {
+    background-color: rgba(#ef4444, 0.1);
+    color: #dc2626;
+  }
+}

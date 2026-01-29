@@ -1,0 +1,53 @@
+---
+import styles from './Footer.module.scss';
+
+const currentYear = new Date().getFullYear();
+
+const footerLinks = [
+  { href: '/mission', label: 'Notre mission' },
+  { href: '/actions', label: 'Nos actions' },
+  { href: '/talents', label: 'Les Talents' },
+  { href: '/a-propos', label: 'À propos' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<footer class={styles.footer}>
+  <div class={styles.container}>
+    <div class={styles.main}>
+      <div class={styles.brand}>
+        <a href="/" class={styles.logo}>
+          <img src="/images/logo-transparent-background.png" alt="Nzela Talents" />
+        </a>
+        <p class={styles.tagline}>
+          Révéler, structurer et connecter les talents de la diaspora pour l'Afrique de demain.
+        </p>
+      </div>
+
+      <nav aria-label="Navigation footer">
+        <h4 class={styles.navTitle}>Navigation</h4>
+        <ul class={styles.navList}>
+          {footerLinks.map((link) => (
+            <li>
+              <a href={link.href} class={styles.navLink}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+
+      <div>
+        <h4 class={styles.navTitle}>Contact</h4>
+        <a href="mailto:contact@nzelatalents.com" class={styles.email}>
+          contact@nzelatalents.com
+        </a>
+        <div class={styles.social}>
+          <!-- LinkedIn à venir -->
+        </div>
+      </div>
+    </div>
+
+    <div class={styles.bottom}>
+      <p>&copy; {currentYear} Nzela Talents. Tous droits réservés.</p>
+    </div>
+  </div>
+</footer>

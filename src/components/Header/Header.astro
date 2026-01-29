@@ -1,0 +1,54 @@
+---
+import styles from './Header.module.scss';
+
+const navLinks = [
+  { href: '/', label: 'Accueil' },
+  { href: '/mission', label: 'Notre mission' },
+  { href: '/actions', label: 'Nos actions' },
+  { href: '/talents', label: 'Les Talents' },
+  { href: '/a-propos', label: 'À propos' },
+  { href: '/contact', label: 'Contact' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class={styles.header}>
+  <div class={styles.container}>
+    <a href="/" class={styles.logo}>
+      <img src="/images/logo-transparent-background.png" alt="Nzela Talents" />
+    </a>
+
+    <button class={styles.burger} aria-label="Menu" aria-expanded="false" data-burger>
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class={styles.nav} data-nav>
+      <ul class={styles.navList}>
+        {navLinks.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class={`${styles.link} ${currentPath === link.href ? styles.active : ''}`}
+            >
+              {link.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const burger = document.querySelector('[data-burger]') as HTMLButtonElement;
+  const nav = document.querySelector('[data-nav]') as HTMLElement;
+
+  burger.addEventListener('click', () => {
+    const isExpanded = burger.getAttribute('aria-expanded') === 'true';
+    burger.setAttribute('aria-expanded', (!isExpanded).toString());
+    nav.classList.toggle('open');
+  });
+</script>

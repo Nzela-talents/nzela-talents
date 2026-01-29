@@ -1,0 +1,318 @@
+---
+import Layout from '../layouts/Layout/Layout.astro';
+import styles from './index.module.scss';
+---
+
+<Layout
+  title="Accueil"
+  description="Nzela Talents valorise les talents de la diaspora congolaise et africaine pour créer un pont vers le développement du continent. Rejoignez notre réseau de compétences."
+>
+  <!-- Hero Section -->
+  <section class={styles.hero}>
+    <!-- Silhouette Afrique (version blanche) -->
+    <img src="/images/africa.svg" alt="" class={styles.africaSilhouetteWhite} aria-hidden="true" />
+    <div class={styles.heroContainer}>
+      <div class={styles.heroContent} data-aos="fade-right">
+        <h1 class={styles.heroTitle}>
+          Révéler, structurer et connecter les talents de la diaspora pour l'Afrique de demain.
+        </h1>
+        <p class={styles.heroSubtitle}>
+          Nzela Talents est une initiative associative qui valorise les talents de la diaspora congolaise et africaine pour créer un pont vers le développement du continent.
+        </p>
+        <a href="/contact" class={styles.heroCta}>Rejoindre Nzela Talents</a>
+      </div>
+    </div>
+    <canvas class={styles.networkCanvas} data-network-canvas></canvas>
+  </section>
+
+
+  <!-- Video Section -->
+  <section class={styles.videoSection}>
+    <div class={styles.videoContainer}>
+      <div class={styles.videoContent} data-aos="fade-right">
+        <h2 class={styles.videoTitle}>Découvrez notre vision</h2>
+        <p class={styles.videoText}>
+          Écoutez les talents de la diaspora partager leur parcours et leur engagement pour le développement de l'Afrique.
+        </p>
+      </div>
+      <div class={styles.videoWrapper} data-aos="fade-left">
+        <video
+          controls
+          playsinline
+          preload="auto"
+          data-video-autoplay
+        >
+          <source src="/videos/video-presentation.webm" type="video/webm" />
+          <source src="/videos/video-presentation.mp4" type="video/mp4" />
+        </video>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pilliers Section -->
+  <section class={styles.pillars}>
+    <div class={styles.pillarsContainer}>
+      <h2 class={styles.pillarsTitle} data-aos="fade-up">Nos 3 piliers</h2>
+
+      <div class={styles.pillarsGrid}>
+        <article class={styles.pillar} data-aos="fade-up" data-aos-delay="100">
+          <div class={styles.pillarIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"></circle>
+              <path d="M12 2v4m0 12v4M2 12h4m12 0h4"></path>
+            </svg>
+          </div>
+          <h3 class={styles.pillarTitle}>Identifier les talents</h3>
+          <p class={styles.pillarText}>
+            Repérer et cartographier les compétences, expertises et potentiels au sein de la diaspora africaine à travers le monde.
+          </p>
+        </article>
+
+        <article class={styles.pillar} data-aos="fade-up" data-aos-delay="200">
+          <div class={styles.pillarIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3h18v18H3zM12 8v8m-4-4h8"></path>
+            </svg>
+          </div>
+          <h3 class={styles.pillarTitle}>Structurer l'expertise</h3>
+          <p class={styles.pillarText}>
+            Organiser et valoriser les savoir-faire pour maximiser leur impact dans les projets de développement du continent.
+          </p>
+        </article>
+
+        <article class={styles.pillar} data-aos="fade-up" data-aos-delay="300">
+          <div class={styles.pillarIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87m-4-12a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class={styles.pillarTitle}>Connecter aux opportunités</h3>
+          <p class={styles.pillarText}>
+            Créer des ponts entre les talents, les institutions africaines, les entreprises et les projets structurants sur le continent.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section (intro) -->
+  <section class={styles.aboutIntro}>
+    <div class={styles.aboutIntroContainer}>
+      <div data-aos="fade-right">
+        <h2 class={styles.aboutIntroTitle}>Une vision panafricaine</h2>
+        <p class={styles.aboutIntroText}>
+          Face au manque de structuration des compétences de la diaspora, Nzela Talents œuvre à créer un écosystème permettant le retour d'expertise, le transfert de compétences et l'engagement panafricain.
+        </p>
+        <p class={styles.aboutIntroText}>
+          Notre ambition : structurer à terme une agence panafricaine de talents d'élite au service du développement de l'Afrique.
+        </p>
+        <a href="/mission" class={styles.aboutIntroLink}>Découvrir notre mission →</a>
+      </div>
+      <div class={styles.aboutIntroVisual} data-aos="fade-left">
+        <div class={styles.aboutIntroShape}></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class={styles.ctaSection}>
+    <div class={styles.ctaContainer} data-aos="zoom-in">
+      <h2 class={styles.ctaTitle}>Prêt à rejoindre le mouvement ?</h2>
+      <p class={styles.ctaText}>
+        Que vous soyez cadre, expert, étudiant ou entrepreneur, votre talent peut contribuer au développement de l'Afrique.
+      </p>
+      <a href="/contact" class={styles.ctaButton}>Rejoindre Nzela Talents</a>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  // Video autoplay quand visible
+  const video = document.querySelector('[data-video-autoplay]') as HTMLVideoElement;
+
+  if (video) {
+    // Volume par défaut à 30%
+    video.volume = 0.3;
+
+    const videoObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            // Mute pour permettre l'autoplay (politique navigateur)
+            video.muted = true;
+            video.play().then(() => {
+              // Unmute après le démarrage
+              video.muted = false;
+            }).catch(() => {
+              // Si ça échoue, reste muet
+            });
+          } else {
+            video.pause();
+          }
+        });
+      },
+      { threshold: 0.7 }
+    );
+
+    videoObserver.observe(video);
+  }
+
+  // Network animation with 3D depth effect
+  const canvas = document.querySelector('[data-network-canvas]') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d');
+
+  if (canvas && ctx) {
+    interface Particle {
+      x: number;
+      y: number;
+      z: number;
+      vx: number;
+      vy: number;
+      baseSize: number;
+      baseOpacity: number;
+    }
+
+    const particles: Particle[] = [];
+
+    const config = {
+      particleCount: 45,
+      connectionDistance: 280,
+      baseSpeed: 0.25,
+      minDepth: 0.3,
+      maxDepth: 1.0,
+    };
+
+    function resize() {
+      const hero = canvas.parentElement;
+      if (hero) {
+        canvas.width = hero.offsetWidth;
+        canvas.height = hero.offsetHeight;
+      }
+    }
+
+    function createParticles() {
+      particles.length = 0;
+      for (let i = 0; i < config.particleCount; i++) {
+        const z = config.minDepth + Math.random() * (config.maxDepth - config.minDepth);
+        particles.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          z: z,
+          vx: (Math.random() - 0.5) * config.baseSpeed * (1.2 - z),
+          vy: (Math.random() - 0.5) * config.baseSpeed * (1.2 - z),
+          baseSize: Math.random() * 3 + 10,
+          baseOpacity: Math.random() * 0.2 + 0.4,
+        });
+      }
+      particles.sort((a, b) => b.z - a.z);
+    }
+
+    function getDepthScale(z: number): number {
+      return 1.3 - z;
+    }
+
+    function getDepthOpacity(z: number, baseOpacity: number): number {
+      const depthFactor = 1.2 - z;
+      return baseOpacity * depthFactor;
+    }
+
+    function drawPerson(p: Particle) {
+      const scale = getDepthScale(p.z);
+      const size = p.baseSize * scale;
+      const opacity = getDepthOpacity(p.z, p.baseOpacity);
+
+      ctx!.fillStyle = `rgba(255, 255, 255, ${opacity})`;
+
+      // Tête
+      const headRadius = size * 0.4;
+      ctx!.beginPath();
+      ctx!.arc(p.x, p.y - size * 0.35, headRadius, 0, Math.PI * 2);
+      ctx!.fill();
+
+      // Buste
+      ctx!.beginPath();
+      ctx!.ellipse(p.x, p.y + size * 0.7, size * 0.7, size * 0.5, 0, Math.PI, 0);
+      ctx!.fill();
+    }
+
+    function getDistance(p1: Particle, p2: Particle): number {
+      const dx = p1.x - p2.x;
+      const dy = p1.y - p2.y;
+      return Math.sqrt(dx * dx + dy * dy);
+    }
+
+    function drawConnections() {
+      const drawnConnections = new Set<string>();
+
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const p1 = particles[i];
+          const p2 = particles[j];
+          const dist = getDistance(p1, p2);
+
+          const avgZ = (p1.z + p2.z) / 2;
+          const adjustedConnectionDist = config.connectionDistance * (1.3 - avgZ);
+
+          if (dist < adjustedConnectionDist) {
+            const key = `${i}-${j}`;
+            if (!drawnConnections.has(key)) {
+              drawnConnections.add(key);
+
+              const distFactor = 1 - dist / adjustedConnectionDist;
+              const depthFactor = 1.2 - avgZ;
+              const opacity = distFactor * depthFactor * 0.35;
+              const lineWidth = depthFactor * 1.2;
+
+              ctx!.beginPath();
+              ctx!.moveTo(p1.x, p1.y);
+              ctx!.lineTo(p2.x, p2.y);
+              ctx!.strokeStyle = `rgba(255, 255, 255, ${opacity})`;
+              ctx!.lineWidth = lineWidth;
+              ctx!.stroke();
+            }
+          }
+        }
+      }
+    }
+
+    function drawParticles() {
+      particles.forEach(p => {
+        drawPerson(p);
+      });
+    }
+
+    function updateParticles() {
+      particles.forEach(p => {
+        p.x += p.vx;
+        p.y += p.vy;
+
+        const margin = 30;
+        if (p.x < margin || p.x > canvas.width - margin) p.vx *= -1;
+        if (p.y < margin || p.y > canvas.height - margin) p.vy *= -1;
+
+        p.x = Math.max(margin, Math.min(canvas.width - margin, p.x));
+        p.y = Math.max(margin, Math.min(canvas.height - margin, p.y));
+      });
+    }
+
+    function animate() {
+      ctx!.clearRect(0, 0, canvas.width, canvas.height);
+      drawConnections();
+      drawParticles();
+      updateParticles();
+      requestAnimationFrame(animate);
+    }
+
+    resize();
+    createParticles();
+    animate();
+
+    window.addEventListener('resize', () => {
+      resize();
+      createParticles();
+    });
+  }
+</script>
+

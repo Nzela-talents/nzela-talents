@@ -1,0 +1,103 @@
+---
+import Layout from '../layouts/Layout/Layout.astro';
+import styles from './mission.module.scss';
+---
+
+<Layout
+  title="Notre Mission"
+  description="Découvrez la mission de Nzela Talents : identifier, structurer et connecter les talents de la diaspora africaine pour contribuer au développement du continent."
+>
+  <!-- Hero -->
+  <section class={styles.hero}>
+    <div class={styles.heroContainer}>
+      <h1 class={styles.heroTitle} data-aos="fade-up">Notre Mission</h1>
+      <p class={styles.heroSubtitle} data-aos="fade-up" data-aos-delay="100">
+        Structurer et valoriser les talents de la diaspora africaine pour contribuer au développement du continent.
+      </p>
+    </div>
+  </section>
+
+  <!-- Vision -->
+  <section class={styles.section}>
+    <div class={styles.container}>
+      <div class={styles.twoColumns}>
+        <div data-aos="fade-right">
+          <h2 class={styles.sectionTitle}>Notre vision</h2>
+          <p class={styles.text}>
+            Face au manque de structuration des compétences de la diaspora, Nzela Talents œuvre à créer un écosystème permettant le retour d'expertise, le transfert de compétences et l'engagement panafricain.
+          </p>
+          <p class={styles.text}>
+            Nous croyons que la diaspora africaine représente un formidable réservoir de talents, d'expertises et de savoir-faire qui peut contribuer de manière significative au développement du continent.
+          </p>
+        </div>
+        <div class={styles.visual} data-aos="fade-left">
+          <div class={styles.visualShape}></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Objectifs -->
+  <section class={styles.sectionAlt}>
+    <div class={styles.container}>
+      <h2 class={styles.sectionTitleCenter} data-aos="fade-up">Nos objectifs</h2>
+
+      <div class={styles.objectivesGrid}>
+        <article class={styles.objective} data-aos="fade-up" data-aos-delay="100">
+          <span class={styles.objectiveNumber}>01</span>
+          <h3 class={styles.objectiveTitle}>Identifier les talents</h3>
+          <p class={styles.objectiveText}>
+            Repérer et cartographier les compétences, expertises et potentiels au sein de la diaspora africaine à travers le monde.
+          </p>
+        </article>
+
+        <article class={styles.objective} data-aos="fade-up" data-aos-delay="200">
+          <span class={styles.objectiveNumber}>02</span>
+          <h3 class={styles.objectiveTitle}>Structurer l'expertise</h3>
+          <p class={styles.objectiveText}>
+            Organiser et valoriser les savoir-faire pour maximiser leur impact dans les projets de développement du continent.
+          </p>
+        </article>
+
+        <article class={styles.objective} data-aos="fade-up" data-aos-delay="300">
+          <span class={styles.objectiveNumber}>03</span>
+          <h3 class={styles.objectiveTitle}>Connecter aux opportunités</h3>
+          <p class={styles.objectiveText}>
+            Créer des ponts entre les talents, les institutions africaines, les entreprises et les projets structurants.
+          </p>
+        </article>
+
+        <article class={styles.objective} data-aos="fade-up" data-aos-delay="400">
+          <span class={styles.objectiveNumber}>04</span>
+          <h3 class={styles.objectiveTitle}>Accompagner le retour</h3>
+          <p class={styles.objectiveText}>
+            Faciliter le retour d'expertise et le transfert de compétences vers le continent africain.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ambition -->
+  <section class={styles.section}>
+    <div class={styles.container}>
+      <div class={styles.ambitionBlock} data-aos="zoom-in">
+        <h2 class={styles.ambitionTitle}>Notre ambition</h2>
+        <p class={styles.ambitionText}>
+          Structurer à terme une agence panafricaine de talents d'élite au service du développement de l'Afrique.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class={styles.cta}>
+    <div class={styles.container}>
+      <h2 class={styles.ctaTitle} data-aos="fade-up">Rejoignez notre mission</h2>
+      <p class={styles.ctaText} data-aos="fade-up" data-aos-delay="100">
+        Votre expertise peut contribuer au développement de l'Afrique.
+      </p>
+      <a href="/contact" class={styles.ctaButton} data-aos="fade-up" data-aos-delay="200">Nous rejoindre</a>
+    </div>
+  </section>
+</Layout>

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nzelatalents.com/sitemap-index.xml

@@ -1,0 +1,142 @@
+---
+import Layout from '../layouts/Layout/Layout.astro';
+import styles from './contact.module.scss';
+---
+
+<Layout
+  title="Contact"
+  description="Contactez Nzela Talents pour rejoindre notre réseau de talents, proposer un partenariat ou en savoir plus sur notre initiative pour la diaspora africaine."
+>
+  <!-- Hero -->
+  <section class={styles.hero}>
+    <div class={styles.heroContainer}>
+      <h1 class={styles.heroTitle} data-aos="fade-up">Contact</h1>
+      <p class={styles.heroSubtitle} data-aos="fade-up" data-aos-delay="100">
+        Une question, une idée, un projet ? Contactez-nous.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class={styles.section}>
+    <div class={styles.container}>
+      <div class={styles.contactGrid}>
+        <!-- Infos -->
+        <div class={styles.contactInfo} data-aos="fade-right">
+          <h2 class={styles.infoTitle}>Restons en contact</h2>
+          <p class={styles.infoText}>
+            Que vous soyez un talent de la diaspora souhaitant rejoindre notre réseau, une entreprise ou institution cherchant des compétences, ou simplement curieux d'en savoir plus sur notre initiative, n'hésitez pas à nous écrire.
+          </p>
+
+          <div class={styles.infoItems}>
+            <div class={styles.infoItem}>
+              <div class={styles.infoIcon}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div>
+                <span class={styles.infoLabel}>Email</span>
+                <a href="mailto:contact@nzelatalents.com" class={styles.infoValue}>contact@nzelatalents.com</a>
+              </div>
+            </div>
+          </div>
+
+          <div class={styles.socialLinks}>
+            <span class={styles.socialLabel}>Suivez-nous</span>
+            <div class={styles.socialIcons}>
+              <a href="#" class={styles.socialIcon} aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulaire -->
+        <div class={styles.contactForm} data-aos="fade-left">
+          <form class={styles.form} id="contact-form" action="/api/contact" method="POST">
+            <div class={styles.formRow}>
+              <div class={styles.formGroup}>
+                <label for="firstname" class={styles.label}>Prénom</label>
+                <input type="text" id="firstname" name="firstname" class={styles.input} required />
+              </div>
+              <div class={styles.formGroup}>
+                <label for="lastname" class={styles.label}>Nom</label>
+                <input type="text" id="lastname" name="lastname" class={styles.input} required />
+              </div>
+            </div>
+
+            <div class={styles.formGroup}>
+              <label for="email" class={styles.label}>Email</label>
+              <input type="email" id="email" name="email" class={styles.input} required />
+            </div>
+
+            <div class={styles.formGroup}>
+              <label for="subject" class={styles.label}>Sujet</label>
+              <select id="subject" name="subject" class={styles.select}>
+                <option value="">Sélectionnez un sujet</option>
+                <option value="rejoindre">Rejoindre Nzela Talents</option>
+                <option value="partenariat">Proposition de partenariat</option>
+                <option value="information">Demande d'information</option>
+                <option value="autre">Autre</option>
+              </select>
+            </div>
+
+            <div class={styles.formGroup}>
+              <label for="message" class={styles.label}>Message</label>
+              <textarea id="message" name="message" rows="5" class={styles.textarea} required></textarea>
+            </div>
+
+            <button type="submit" class={styles.submitButton} id="submit-btn">Envoyer</button>
+            <div id="form-status" class={styles.formStatus}></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+  const statusDiv = document.getElementById('form-status') as HTMLDivElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Envoi en cours...';
+    statusDiv.textContent = '';
+    statusDiv.className = '';
+
+    try {
+      const formData = new FormData(form);
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        statusDiv.textContent = result.message;
+        statusDiv.classList.add('success');
+        form.reset();
+      } else {
+        statusDiv.textContent = result.error;
+        statusDiv.classList.add('error');
+      }
+    } catch (error) {
+      statusDiv.textContent = "Une erreur s'est produite. Veuillez réessayer.";
+      statusDiv.classList.add('error');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Envoyer';
+    }
+  });
+</script>

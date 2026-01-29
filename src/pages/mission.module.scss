@@ -1,0 +1,267 @@
+@use '../styles/variables' as *;
+@use '../styles/mixins' as *;
+
+// ===========================================
+// HERO
+// ===========================================
+
+.hero {
+  @include page-hero;
+}
+
+.heroContainer {
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 0 $container-padding;
+}
+
+.heroTitle {
+  color: $color-white;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.heroSubtitle {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  opacity: 0.9;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
+}
+
+// ===========================================
+// SECTIONS
+// ===========================================
+
+.section {
+  padding: $spacing-xl 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+.sectionAlt {
+  background-color: $color-white;
+  padding: $spacing-xl 0;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  max-width: $container-max-width;
+  padding: 0 $container-padding;
+}
+
+.sectionTitle {
+  color: $color-primary;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-md;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.sectionTitleCenter {
+  color: $color-primary;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-xl;
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.text {
+  color: $color-text-light;
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  margin-bottom: $spacing-md;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// ===========================================
+// TWO COLUMNS
+// ===========================================
+
+.twoColumns {
+  align-items: center;
+  display: grid;
+  gap: $spacing-xl;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.visual {
+  display: none;
+
+  @media (min-width: $breakpoint-md) {
+    display: block;
+  }
+}
+
+.visualShape {
+  aspect-ratio: 1;
+  background: linear-gradient(135deg, rgba($color-secondary, 0.15) 0%, rgba($color-primary, 0.08) 100%);
+  border-radius: $border-radius-lg;
+  width: 100%;
+}
+
+// ===========================================
+// OBJECTIVES
+// ===========================================
+
+.objectivesGrid {
+  display: grid;
+  gap: $spacing-lg;
+  grid-template-columns: 1fr;
+
+  @media (min-width: $breakpoint-md) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.objective {
+  background-color: $color-background;
+  border-radius: $border-radius-md;
+  padding: $spacing-lg;
+  transition: box-shadow $transition-normal, transform $transition-normal;
+
+  &:hover {
+    box-shadow: $shadow-md;
+    transform: translateY(-3px);
+  }
+}
+
+.objectiveNumber {
+  color: $color-secondary;
+  display: block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  margin-bottom: $spacing-sm;
+}
+
+.objectiveTitle {
+  color: $color-primary;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-sm;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
+}
+
+.objectiveText {
+  color: $color-text-light;
+  font-size: $font-size-sm;
+  line-height: $line-height-relaxed;
+}
+
+// ===========================================
+// AMBITION
+// ===========================================
+
+.ambitionBlock {
+  background: linear-gradient(135deg, $color-primary 0%, $color-primary-dark 100%);
+  border-radius: $border-radius-md;
+  color: $color-white;
+  padding: $spacing-xl;
+  text-align: center;
+
+  @media (min-width: $breakpoint-md) {
+    padding: $spacing-2xl;
+  }
+}
+
+.ambitionTitle {
+  color: $color-white;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-sm;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.ambitionText {
+  font-size: $font-size-base;
+  line-height: $line-height-relaxed;
+  margin: 0 auto;
+  max-width: 600px;
+  opacity: 0.9;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+  }
+}
+
+// ===========================================
+// CTA
+// ===========================================
+
+.cta {
+  background-color: $color-secondary;
+  padding: $spacing-2xl 0;
+  text-align: center;
+}
+
+.ctaTitle {
+  color: $color-white;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-semibold;
+  margin-bottom: $spacing-sm;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-3xl;
+  }
+}
+
+.ctaText {
+  color: rgba($color-white, 0.9);
+  font-size: $font-size-base;
+  margin-bottom: $spacing-lg;
+}
+
+.ctaButton {
+  background-color: $color-white;
+  border-radius: $border-radius-sm;
+  color: $color-secondary;
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  padding: $spacing-sm $spacing-lg;
+  text-decoration: none;
+  transition: all $transition-normal;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-base;
+    padding: $spacing-sm $spacing-xl;
+  }
+}

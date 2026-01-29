@@ -1,0 +1,109 @@
+---
+import Layout from '../layouts/Layout/Layout.astro';
+import styles from './a-propos.module.scss';
+---
+
+<Layout
+  title="À propos"
+  description="Apprenez-en plus sur Nzela Talents, notre histoire, nos valeurs et notre équipe engagée pour connecter les talents de la diaspora avec les opportunités en Afrique."
+>
+  <!-- Hero -->
+  <section class={styles.hero}>
+    <div class={styles.heroContainer}>
+      <h1 class={styles.heroTitle} data-aos="fade-up">À propos</h1>
+      <p class={styles.heroSubtitle} data-aos="fade-up" data-aos-delay="100">
+        Découvrez l'histoire et les valeurs de Nzela Talents.
+      </p>
+    </div>
+  </section>
+
+  <!-- Histoire -->
+  <section class={styles.section}>
+    <div class={styles.container}>
+      <div class={styles.twoColumns}>
+        <div data-aos="fade-right">
+          <h2 class={styles.sectionTitle}>Notre histoire</h2>
+          <p class={styles.text}>
+            Nzela Talents est née d'un constat simple : la diaspora africaine regorge de talents et de compétences qui peuvent contribuer de manière significative au développement du continent.
+          </p>
+          <p class={styles.text}>
+            Fondée par des professionnels de la diaspora congolaise, l'association s'est donnée pour mission de créer un pont entre ces talents et les opportunités en Afrique.
+          </p>
+          <p class={styles.text}>
+            Le nom "Nzela" signifie "chemin" en lingala. Il symbolise la voie que nous traçons ensemble vers un avenir meilleur pour le continent africain.
+          </p>
+        </div>
+        <div class={styles.visual} data-aos="fade-left">
+          <div class={styles.visualShape}></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Valeurs -->
+  <section class={styles.sectionAlt}>
+    <div class={styles.container}>
+      <h2 class={styles.sectionTitleCenter} data-aos="fade-up">Nos valeurs</h2>
+
+      <div class={styles.valuesGrid}>
+        <article class={styles.value} data-aos="fade-up" data-aos-delay="100">
+          <h3 class={styles.valueTitle}>Excellence</h3>
+          <p class={styles.valueText}>
+            Nous visons l'excellence dans tout ce que nous faisons, en valorisant les compétences et le professionnalisme.
+          </p>
+        </article>
+
+        <article class={styles.value} data-aos="fade-up" data-aos-delay="150">
+          <h3 class={styles.valueTitle}>Solidarité</h3>
+          <p class={styles.valueText}>
+            Nous croyons en la force du collectif et en l'entraide au sein de la diaspora africaine.
+          </p>
+        </article>
+
+        <article class={styles.value} data-aos="fade-up" data-aos-delay="200">
+          <h3 class={styles.valueTitle}>Engagement</h3>
+          <p class={styles.valueText}>
+            Nous sommes engagés pour le développement durable et inclusif du continent africain.
+          </p>
+        </article>
+
+        <article class={styles.value} data-aos="fade-up" data-aos-delay="250">
+          <h3 class={styles.valueTitle}>Innovation</h3>
+          <p class={styles.valueText}>
+            Nous encourageons les approches innovantes pour répondre aux défis du développement.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Équipe -->
+  <section class={styles.section}>
+    <div class={styles.container}>
+      <h2 class={styles.sectionTitleCenter} data-aos="fade-up">Notre équipe</h2>
+
+      <div class={styles.teamGrid}>
+        <article class={styles.teamMember} data-aos="fade-up" data-aos-delay="100">
+          <div class={styles.memberAvatar}></div>
+          <h3 class={styles.memberName}>Kahembe de Maere Evelyne</h3>
+          <p class={styles.memberRole}>Présidente</p>
+        </article>
+      </div>
+
+      <p class={styles.teamNote} data-aos="fade-up">
+        Nzela Talents est portée par une équipe de bénévoles passionnés, issus de divers horizons professionnels, unis par une même vision pour l'Afrique.
+      </p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class={styles.cta}>
+    <div class={styles.container}>
+      <h2 class={styles.ctaTitle} data-aos="fade-up">Rejoignez l'aventure</h2>
+      <p class={styles.ctaText} data-aos="fade-up" data-aos-delay="100">
+        Ensemble, construisons l'Afrique de demain.
+      </p>
+      <a href="/contact" class={styles.ctaButton} data-aos="fade-up" data-aos-delay="200">Nous contacter</a>
+    </div>
+  </section>
+</Layout>

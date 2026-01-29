@@ -1,0 +1,159 @@
+---
+import Layout from '../layouts/Layout/Layout.astro';
+import styles from './talents.module.scss';
+---
+
+<Layout
+  title="Les Talents"
+  description="Rencontrez les talents de la diaspora africaine qui s'engagent avec Nzela Talents. Cadres, experts, entrepreneurs et étudiants au service du développement de l'Afrique."
+>
+  <!-- Hero -->
+  <section class={styles.hero}>
+    <div class={styles.heroContainer}>
+      <h1 class={styles.heroTitle} data-aos="fade-up">Les Talents</h1>
+      <p class={styles.heroSubtitle} data-aos="fade-up" data-aos-delay="100">
+        Une communauté de professionnels engagés pour le développement de l'Afrique.
+      </p>
+    </div>
+  </section>
+
+  <!-- Intro -->
+  <section class={styles.section}>
+    <div class={styles.container}>
+      <div class={styles.intro} data-aos="fade-up">
+        <p class={styles.introText}>
+          Nzela Talents rassemble des professionnels de la diaspora africaine aux parcours variés et aux expertises complémentaires. Cadres, entrepreneurs, chercheurs, artistes... tous partagent une même volonté : contribuer au développement du continent africain.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Profils recherchés -->
+  <section class={styles.sectionAlt}>
+    <div class={styles.container}>
+      <h2 class={styles.sectionTitle} data-aos="fade-up">Profils recherchés</h2>
+
+      <div class={styles.profilesGrid}>
+        <article class={styles.profile} data-aos="fade-up" data-aos-delay="100">
+          <div class={styles.profileIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+            </svg>
+          </div>
+          <h3 class={styles.profileTitle}>Cadres & Dirigeants</h3>
+          <p class={styles.profileText}>
+            Managers, directeurs et cadres supérieurs avec une expérience en entreprise ou institutions.
+          </p>
+        </article>
+
+        <article class={styles.profile} data-aos="fade-up" data-aos-delay="150">
+          <div class={styles.profileIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="M2 17l10 5 10-5"></path>
+              <path d="M2 12l10 5 10-5"></path>
+            </svg>
+          </div>
+          <h3 class={styles.profileTitle}>Entrepreneurs</h3>
+          <p class={styles.profileText}>
+            Fondateurs de startups et chefs d'entreprise souhaitant partager leur expérience entrepreneuriale.
+          </p>
+        </article>
+
+        <article class={styles.profile} data-aos="fade-up" data-aos-delay="200">
+          <div class={styles.profileIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+          </div>
+          <h3 class={styles.profileTitle}>Chercheurs & Académiques</h3>
+          <p class={styles.profileText}>
+            Professeurs, chercheurs et doctorants engagés dans la transmission du savoir.
+          </p>
+        </article>
+
+        <article class={styles.profile} data-aos="fade-up" data-aos-delay="250">
+          <div class={styles.profileIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"></polyline>
+              <polyline points="8 6 2 12 8 18"></polyline>
+            </svg>
+          </div>
+          <h3 class={styles.profileTitle}>Experts techniques</h3>
+          <p class={styles.profileText}>
+            Ingénieurs, développeurs, médecins et spécialistes dans leur domaine d'expertise.
+          </p>
+        </article>
+
+        <article class={styles.profile} data-aos="fade-up" data-aos-delay="300">
+          <div class={styles.profileIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon>
+            </svg>
+          </div>
+          <h3 class={styles.profileTitle}>Consultants</h3>
+          <p class={styles.profileText}>
+            Professionnels du conseil en stratégie, organisation, finance ou transformation digitale.
+          </p>
+        </article>
+
+        <article class={styles.profile} data-aos="fade-up" data-aos-delay="350">
+          <div class={styles.profileIcon}>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+            </svg>
+          </div>
+          <h3 class={styles.profileTitle}>Créatifs & Artistes</h3>
+          <p class={styles.profileText}>
+            Designers, artistes et professionnels de la culture contribuant au rayonnement africain.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Rejoindre -->
+  <section class={styles.section}>
+    <div class={styles.container}>
+      <div class={styles.joinBlock} data-aos="fade-up">
+        <h2 class={styles.joinTitle}>Pourquoi rejoindre Nzela Talents ?</h2>
+        <ul class={styles.joinList}>
+          <li class={styles.joinItem}>
+            <span class={styles.joinCheck}>✓</span>
+            <span>Intégrer un réseau de professionnels engagés pour l'Afrique</span>
+          </li>
+          <li class={styles.joinItem}>
+            <span class={styles.joinCheck}>✓</span>
+            <span>Accéder à des opportunités de missions et projets concrets</span>
+          </li>
+          <li class={styles.joinItem}>
+            <span class={styles.joinCheck}>✓</span>
+            <span>Participer à des événements de networking exclusifs</span>
+          </li>
+          <li class={styles.joinItem}>
+            <span class={styles.joinCheck}>✓</span>
+            <span>Contribuer au développement du continent avec vos compétences</span>
+          </li>
+          <li class={styles.joinItem}>
+            <span class={styles.joinCheck}>✓</span>
+            <span>Bénéficier d'accompagnement pour vos projets de retour</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class={styles.cta}>
+    <div class={styles.container}>
+      <h2 class={styles.ctaTitle} data-aos="fade-up">Devenez un talent Nzela</h2>
+      <p class={styles.ctaText} data-aos="fade-up" data-aos-delay="100">
+        Rejoignez notre communauté et mettez vos compétences au service de l'Afrique.
+      </p>
+      <a href="/contact" class={styles.ctaButton} data-aos="fade-up" data-aos-delay="200">Postuler</a>
+    </div>
+  </section>
+</Layout>
