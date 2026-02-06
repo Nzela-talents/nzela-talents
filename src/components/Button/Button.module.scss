@@ -1,0 +1,73 @@
+@use '../../styles/variables' as *;
+
+.button {
+  border: none;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: $font-weight-medium;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow $transition-normal, background-color $transition-fast;
+}
+
+// Variants
+.primary {
+  background-color: $color-secondary;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-secondary-dark;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    color: $color-white;
+  }
+}
+
+.secondary {
+  background-color: $color-white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: $color-secondary;
+
+  &:hover {
+    background-color: $color-primary;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+    color: $color-white;
+  }
+}
+
+.outline {
+  background-color: transparent;
+  border: 2px solid $color-white;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-primary;
+  }
+}
+
+// Sizes
+.sm {
+  font-size: $font-size-sm;
+  padding: $spacing-xs $spacing-md;
+}
+
+.md {
+  font-size: $font-size-sm;
+  padding: $spacing-sm $spacing-lg;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-base;
+  }
+}
+
+.lg {
+  font-size: $font-size-base;
+  padding: $spacing-sm $spacing-xl;
+
+  @media (min-width: $breakpoint-md) {
+    font-size: $font-size-lg;
+    padding: $spacing-md $spacing-2xl;
+  }
+}

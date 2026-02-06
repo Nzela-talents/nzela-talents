@@ -176,6 +176,7 @@
 
 .teamGrid {
   display: flex;
+  gap: $spacing-2xl;
   justify-content: center;
   margin-bottom: $spacing-xl;
 }
@@ -184,12 +185,28 @@
   text-align: center;
 }
 
-.memberAvatar {
-  background: linear-gradient(135deg, rgba($color-secondary, 0.2) 0%, rgba($color-primary, 0.15) 100%);
-  border-radius: $border-radius-full;
-  height: 100px;
+.memberAvatarWrapper {
+  border-radius: 50%;
+  height: 110px;
   margin: 0 auto $spacing-md;
-  width: 100px;
+  overflow: hidden;
+  width: 110px;
+}
+
+.memberAvatar {
+  border-radius: 50%;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+.memberAvatarZoomed {
+  object-position: center 25%;
+  transform: scale(1.25);
+}
+
+.memberAvatarEvelyne {
+  transform: scale(1.4) translateX(4%);
 }
 
 .memberName {

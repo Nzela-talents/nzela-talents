@@ -19,13 +19,24 @@ const currentPath = Astro.url.pathname;
       <img src="/images/logo-transparent-background.png" alt="Nzela Talents" />
     </a>
 
-    <button class={styles.burger} aria-label="Menu" aria-expanded="false" data-burger>
+    <button class={styles.burger} aria-label="Ouvrir le menu" aria-expanded="false" data-burger>
       <span></span>
       <span></span>
       <span></span>
     </button>
 
+    <div class={styles.overlay} data-overlay></div>
+
     <nav class={styles.nav} data-nav>
+      <div class={styles.navHeader}>
+        <span class={styles.navTitle}>Menu</span>
+        <button class={styles.closeButton} aria-label="Fermer le menu" data-close>
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
       <ul class={styles.navList}>
         {navLinks.map((link) => (
           <li>
@@ -45,10 +56,24 @@ const currentPath = Astro.url.pathname;
 <script>
   const burger = document.querySelector('[data-burger]') as HTMLButtonElement;
   const nav = document.querySelector('[data-nav]') as HTMLElement;
+  const overlay = document.querySelector('[data-overlay]') as HTMLElement;
+  const closeBtn = document.querySelector('[data-close]') as HTMLButtonElement;
 
-  burger.addEventListener('click', () => {
-    const isExpanded = burger.getAttribute('aria-expanded') === 'true';
-    burger.setAttribute('aria-expanded', (!isExpanded).toString());
-    nav.classList.toggle('open');
-  });
+  function openMenu() {
+    burger.setAttribute('aria-expanded', 'true');
+    nav.dataset.open = 'true';
+    overlay.dataset.open = 'true';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    burger.setAttribute('aria-expanded', 'false');
+    nav.dataset.open = 'false';
+    overlay.dataset.open = 'false';
+    document.body.style.overflow = '';
+  }
+
+  burger.addEventListener('click', openMenu);
+  closeBtn.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
 </script>

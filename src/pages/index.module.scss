@@ -26,7 +26,7 @@
   position: absolute;
   top: 0;
   width: 100%;
-  z-index: 1;
+  z-index: 0;
 }
 
 // Version blanche (à commenter/décommenter pour choisir)
@@ -96,30 +96,6 @@
   }
 }
 
-.heroCta {
-  background-color: $color-secondary;
-  border: none;
-  border-radius: $border-radius-sm;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
-  color: $color-white;
-  display: inline-block;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  padding: $spacing-xs $spacing-md;
-  text-decoration: none;
-  transition: box-shadow $transition-normal, background-color $transition-fast;
-
-  &:hover {
-    background-color: $color-secondary-dark;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    color: $color-white;
-  }
-
-  @media (min-width: $breakpoint-md) {
-    font-size: $font-size-base;
-    padding: $spacing-sm $spacing-lg;
-  }
-}
 
 // ===========================================
 // VIDEO SECTION
@@ -398,28 +374,3 @@
   max-width: 550px;
 }
 
-.ctaButton {
-  align-items: center;
-  background-color: $color-white;
-  border: none;
-  border-radius: $border-radius-sm;
-  color: $color-secondary;
-  cursor: pointer;
-  display: inline-flex;
-  font-size: $font-size-sm;
-  font-weight: $font-weight-medium;
-  justify-content: center;
-  padding: $spacing-sm $spacing-lg;
-  text-decoration: none;
-  transition: all $transition-normal;
-
-  &:hover {
-    background-color: $color-primary;
-    color: $color-white;
-  }
-
-  @media (min-width: $breakpoint-md) {
-    font-size: $font-size-base;
-    padding: $spacing-sm $spacing-xl;
-  }
-}

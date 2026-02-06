@@ -2,6 +2,7 @@
 import styles from './Footer.module.scss';
 
 const currentYear = new Date().getFullYear();
+const currentPath = Astro.url.pathname;
 
 const footerLinks = [
   { href: '/mission', label: 'Notre mission' },
@@ -29,7 +30,12 @@ const footerLinks = [
         <ul class={styles.navList}>
           {footerLinks.map((link) => (
             <li>
-              <a href={link.href} class={styles.navLink}>{link.label}</a>
+              <a
+                href={link.href}
+                class={`${styles.navLink} ${currentPath === link.href ? styles.active : ''}`}
+              >
+                {link.label}
+              </a>
             </li>
           ))}
         </ul>

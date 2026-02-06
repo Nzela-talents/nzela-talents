@@ -84,9 +84,19 @@ import styles from './a-propos.module.scss';
 
       <div class={styles.teamGrid}>
         <article class={styles.teamMember} data-aos="fade-up" data-aos-delay="100">
-          <div class={styles.memberAvatar}></div>
+          <div class={styles.memberAvatarWrapper}>
+            <img src="/images/PP-Kahembe-de-Maere-Evelyne.jpeg" alt="Kahembe de Maere Evelyne" class={`${styles.memberAvatar} ${styles.memberAvatarEvelyne}`} />
+          </div>
           <h3 class={styles.memberName}>Kahembe de Maere Evelyne</h3>
           <p class={styles.memberRole}>Présidente</p>
+        </article>
+
+        <article class={styles.teamMember} data-aos="fade-up" data-aos-delay="200">
+          <div class={styles.memberAvatarWrapper}>
+            <img src="/images/PP-Benito.jpeg" alt="Benito Lukeba" class={`${styles.memberAvatar} ${styles.memberAvatarZoomed}`} />
+          </div>
+          <h3 class={styles.memberName}>Benito Lukeba</h3>
+          <p class={styles.memberRole}>Responsable Communication</p>
         </article>
       </div>
 

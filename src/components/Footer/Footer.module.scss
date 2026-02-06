@@ -74,6 +74,11 @@
   &:hover {
     color: $color-secondary;
   }
+
+  &.active {
+    color: $color-secondary;
+    font-weight: $font-weight-medium;
+  }
 }
 
 .email {

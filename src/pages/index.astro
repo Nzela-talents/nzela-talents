@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout/Layout.astro';
+import Button from '../components/Button/Button.astro';
 import styles from './index.module.scss';
 ---
 
@@ -19,7 +20,7 @@ import styles from './index.module.scss';
         <p class={styles.heroSubtitle}>
           Nzela Talents est une initiative associative qui valorise les talents de la diaspora congolaise et africaine pour créer un pont vers le développement du continent.
         </p>
-        <a href="/contact" class={styles.heroCta}>Rejoindre Nzela Talents</a>
+        <Button href="/contact">Rejoindre Nzela Talents</Button>
       </div>
     </div>
     <canvas class={styles.networkCanvas} data-network-canvas></canvas>
@@ -123,37 +124,38 @@ import styles from './index.module.scss';
       <p class={styles.ctaText}>
         Que vous soyez cadre, expert, étudiant ou entrepreneur, votre talent peut contribuer au développement de l'Afrique.
       </p>
-      <a href="/contact" class={styles.ctaButton}>Rejoindre Nzela Talents</a>
+      <Button href="/contact" variant="secondary">Rejoindre Nzela Talents</Button>
     </div>
   </section>
 </Layout>
 
 <script>
-  // Video autoplay quand visible
+  // Video: pause quand hors écran, respecte les interactions utilisateur
   const video = document.querySelector('[data-video-autoplay]') as HTMLVideoElement;
 
   if (video) {
-    // Volume par défaut à 30%
     video.volume = 0.3;
+
+    let wasPlayingBeforeLeave = false;
 
     const videoObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            // Mute pour permettre l'autoplay (politique navigateur)
-            video.muted = true;
-            video.play().then(() => {
-              // Unmute après le démarrage
-              video.muted = false;
-            }).catch(() => {
-              // Si ça échoue, reste muet
-            });
+            // Si la vidéo jouait avant de sortir de l'écran, la relancer
+            if (wasPlayingBeforeLeave) {
+              video.play().catch(() => {});
+            }
           } else {
-            video.pause();
+            // Sauvegarder l'état avant de mettre en pause
+            wasPlayingBeforeLeave = !video.paused;
+            if (wasPlayingBeforeLeave) {
+              video.pause();
+            }
           }
         });
       },
-      { threshold: 0.7 }
+      { threshold: 0.3 }
     );
 
     videoObserver.observe(video);
@@ -177,12 +179,18 @@ import styles from './index.module.scss';
     const particles: Particle[] = [];
 
     const config = {
-      particleCount: 45,
       connectionDistance: 280,
-      baseSpeed: 0.25,
+      baseSpeed: 0.5,
       minDepth: 0.3,
       maxDepth: 1.0,
     };
+
+    function getParticleCount(): number {
+      const width = window.innerWidth;
+      if (width < 768) return 30;
+      if (width < 1920) return 55;
+      return 70;
+    }
 
     function resize() {
       const hero = canvas.parentElement;
@@ -194,7 +202,8 @@ import styles from './index.module.scss';
 
     function createParticles() {
       particles.length = 0;
-      for (let i = 0; i < config.particleCount; i++) {
+      const count = getParticleCount();
+      for (let i = 0; i < count; i++) {
         const z = config.minDepth + Math.random() * (config.maxDepth - config.minDepth);
         particles.push({
           x: Math.random() * canvas.width,
