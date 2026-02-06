@@ -35,14 +35,12 @@
 
   img {
     filter: brightness(0) invert(1);
-    height: 100px;
-    margin: -15px 0;
+    height: 40px;
     object-fit: contain;
     width: auto;
 
     @media (min-width: $breakpoint-md) {
-      height: 120px;
-      margin: -20px 0;
+      height: 50px;
     }
   }
 }

@@ -40,7 +40,8 @@ import styles from './index.module.scss';
         <video
           controls
           playsinline
-          preload="auto"
+          preload="metadata"
+          poster="/images/video-poster.webp"
           data-video-autoplay
           aria-label="Video de presentation de Nzela Talents"
         >
@@ -189,7 +190,7 @@ import styles from './index.module.scss';
 
     function getParticleCount(): number {
       const width = window.innerWidth;
-      if (width < 768) return 30;
+      if (width < 768) return 20;
       if (width < 1920) return 55;
 
       return 70;
