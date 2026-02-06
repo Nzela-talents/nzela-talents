@@ -1,43 +1,54 @@
-# Astro Starter Kit: Minimal
+# Nzela Talents
 
-```sh
-npm create astro@latest -- --template minimal
+Site vitrine de l'association Nzela Talents, une initiative qui valorise les talents de la diaspora congolaise et africaine.
+
+## Installation
+
+```bash
+npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Commandes
 
-## 🚀 Project Structure
+| Commande          | Description                              |
+| :---------------- | :--------------------------------------- |
+| `npm run dev`     | Lance le serveur de developpement        |
+| `npm run build`   | Build le site pour la production         |
+| `npm run preview` | Previsualise le build avant deploiement  |
 
-Inside of your Astro project, you'll see the following folders and files:
+## Configuration
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+Copier le fichier `.env.example` vers `.env` et renseigner les variables :
+
+```bash
+cp .env.example .env
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+Variables requises :
+- `RESEND_API_KEY` : Cle API Resend pour l'envoi d'emails
+- `CONTACT_EMAIL` : Adresse email de destination du formulaire de contact
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+## Stack technique
 
-Any static assets, like images, can be placed in the `public/` directory.
+- Astro
+- SCSS + CSS Modules
+- Resend (envoi d'emails)
+- Vercel (hebergement)
 
-## 🧞 Commands
+## Structure du projet
 
-All commands are run from the root of the project, from a terminal:
+```
+src/
+  components/     # Composants reutilisables (Header, Footer, etc.)
+  layouts/        # Layout principal
+  pages/          # Pages du site
+  styles/         # Variables et styles globaux
+public/
+  images/         # Images et logo
+  videos/         # Videos
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## Contact
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Site : nzelatalents.com
+- Email : contact@nzelatalents.com
