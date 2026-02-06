@@ -277,10 +277,10 @@
 }
 
 .formStatus {
+  border-radius: $border-radius-sm;
   font-size: $font-size-sm;
   margin-top: $spacing-sm;
   padding: $spacing-sm;
-  border-radius: $border-radius-sm;
 
   &:empty {
     display: none;

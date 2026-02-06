@@ -37,24 +37,24 @@
 
 // Conteneur centré
 @mixin container {
-  width: 100%;
-  max-width: $container-max-width;
   margin-left: auto;
   margin-right: auto;
+  max-width: $container-max-width;
   padding-left: $container-padding;
   padding-right: $container-padding;
+  width: 100%;
 }
 
 // Flexbox helpers
 @mixin flex-center {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }
 
 @mixin flex-between {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: space-between;
 }
 
@@ -65,22 +65,22 @@
 
 // Bouton de base
 @mixin button-base {
-  display: inline-flex;
   align-items: center;
-  justify-content: center;
-  padding: $spacing-sm $spacing-lg;
-  font-family: $font-family-body;
-  font-size: $font-size-base;
-  font-weight: $font-weight-medium;
-  text-decoration: none;
   border: none;
   border-radius: $border-radius-md;
   cursor: pointer;
+  display: inline-flex;
+  font-family: $font-family-body;
+  font-size: $font-size-base;
+  font-weight: $font-weight-medium;
+  justify-content: center;
+  padding: $spacing-sm $spacing-lg;
+  text-decoration: none;
   transition: all $transition-normal;
 
   &:disabled {
-    opacity: 0.6;
     cursor: not-allowed;
+    opacity: 0.6;
   }
 }
 
@@ -110,8 +110,8 @@
 @mixin button-outline {
   @include button-base;
   background-color: transparent;
-  color: $color-primary;
   border: 2px solid $color-primary;
+  color: $color-primary;
 
   &:hover:not(:disabled) {
     background-color: $color-primary;
@@ -121,10 +121,10 @@
 
 // Titre de section
 @mixin section-title {
+  color: $color-primary;
   font-family: $font-family-heading;
   font-size: $font-size-3xl;
   font-weight: $font-weight-bold;
-  color: $color-primary;
   line-height: $line-height-tight;
   margin-bottom: $spacing-lg;
 
@@ -135,19 +135,19 @@
 
 // Lien avec underline animé
 @mixin link-underline {
+  color: $color-primary;
   position: relative;
   text-decoration: none;
-  color: $color-primary;
 
   &::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 2px;
     background-color: $color-secondary;
+    bottom: -2px;
+    content: '';
+    height: 2px;
+    left: 0;
+    position: absolute;
     transition: width $transition-normal;
+    width: 0;
   }
 
   &:hover::after {
@@ -157,15 +157,15 @@
 
 // Visually hidden (accessibilité)
 @mixin visually-hidden {
-  position: absolute;
-  width: 1px;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
   height: 1px;
-  padding: 0;
   margin: -1px;
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
+  padding: 0;
+  position: absolute;
   white-space: nowrap;
-  border: 0;
+  width: 1px;
 }
 
 // Hero des pages intérieures

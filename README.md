@@ -39,13 +39,13 @@ Variables requises :
 
 ```
 src/
-  components/     # Composants reutilisables (Header, Footer, etc.)
-  layouts/        # Layout principal
-  pages/          # Pages du site
-  styles/         # Variables et styles globaux
-public/
-  images/         # Images et logo
-  videos/         # Videos
+	components/     # Composants reutilisables (Header, Footer, etc.)
+	layouts/        # Layout principal
+	pages/          # Pages du site
+	styles/         # Variables et styles globaux
+	public/
+	images/         # Images et logo
+	videos/         # Videos
 ```
 
 ## Contact

@@ -3,6 +3,18 @@ import { Resend } from 'resend';
 
 const resend = new Resend(import.meta.env.RESEND_API_KEY);
 
+// Fonction pour echapper les caracteres HTML (protection XSS)
+function escapeHtml(text: string): string {
+  const htmlEntities: Record<string, string> = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;',
+  };
+  return text.replace(/[&<>"']/g, (char) => htmlEntities[char]);
+}
+
 const subjectLabels: Record<string, string> = {
   rejoindre: 'Rejoindre Nzela Talents',
   partenariat: 'Proposition de partenariat',
@@ -43,7 +55,7 @@ export const POST: APIRoute = async ({ request }) => {
       from: 'Nzela Talents <onboarding@resend.dev>',
       to: [import.meta.env.CONTACT_EMAIL],
       replyTo: email,
-      subject: `[Nzela Talents] ${subjectLabel} - ${firstname} ${lastname}`,
+      subject: `[Nzela Talents] ${subjectLabel} - ${escapeHtml(firstname)} ${escapeHtml(lastname)}`,
       html: `
 <!DOCTYPE html>
 <html lang="fr">
@@ -67,14 +79,14 @@ export const POST: APIRoute = async ({ request }) => {
           Nouveau message : ${subjectLabel}
         </p>
 
-        <p style="margin: 0 0 8px; color: #333;"><strong>De :</strong> ${firstname} ${lastname}</p>
-        <p style="margin: 0 0 20px; color: #333;"><strong>Email :</strong> <a href="mailto:${email}" style="color: #c45a3b;">${email}</a></p>
+        <p style="margin: 0 0 8px; color: #333;"><strong>De :</strong> ${escapeHtml(firstname)} ${escapeHtml(lastname)}</p>
+        <p style="margin: 0 0 20px; color: #333;"><strong>Email :</strong> <a href="mailto:${escapeHtml(email)}" style="color: #c45a3b;">${escapeHtml(email)}</a></p>
 
         <hr style="border: none; border-top: 1px solid #eee; margin: 20px 0;">
 
         <p style="margin: 0 0 10px; color: #1e3a5f; font-weight: bold;">Message :</p>
         <p style="margin: 0; color: #333; line-height: 1.6;">
-          ${message.replace(/\n/g, '<br />')}
+          ${escapeHtml(message).replace(/\n/g, '<br />')}
         </p>
       </td>
     </tr>
