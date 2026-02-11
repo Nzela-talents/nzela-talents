@@ -67,7 +67,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     <!-- Header -->
     <tr>
-      <td style="background-color: #1e3a5f; padding: 24px; text-align: center; border-radius: 8px 8px 0 0;">
+      <td style="background-color: #f0f4f8; padding: 24px; text-align: center; border-radius: 8px 8px 0 0;">
         <img src="https://nzelatalents.com/images/logo.png" alt="Nzela Talents" width="150" style="display: block; margin: 0 auto;" />
       </td>
     </tr>
