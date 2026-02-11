@@ -52,7 +52,7 @@ export const POST: APIRoute = async ({ request }) => {
 
     // Envoyer l'email
     const { error } = await resend.emails.send({
-      from: 'Nzela Talents <onboarding@resend.dev>',
+      from: 'Nzela Talents <contact@nzelatalents.com>',
       to: [import.meta.env.CONTACT_EMAIL],
       replyTo: email,
       subject: `[Nzela Talents] ${subjectLabel} - ${escapeHtml(firstname)} ${escapeHtml(lastname)}`,
